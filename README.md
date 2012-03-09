@@ -1,1 +1,1 @@
-TODO To clean dotfiles and upload them on github so I can easily syncronize them accros comptuers.
+My dotfiles, to easily synchronize the settings across different machines.
