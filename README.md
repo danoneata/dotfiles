@@ -5,14 +5,14 @@ necessary at the moment.
 
 To add a new submodule to the repository:
 
-  ```cd ~/dotfiles
-  git submodule add http://github.com/name/package.git vim.clean/bundle/package
-  git add vim.clean/bundle/.
-  git commit -m "Installed package.vim bundle as a submodule."
-  ```
+    cd ~/dotfiles
+    git submodule add http://github.com/name/package.git vim.clean/bundle/package
+    git add vim.clean/bundle/.
+    git commit -m "Installed package.vim bundle as a submodule."
+  
 
 To synchronize on a remote machine, do the following:
 
-  cd ~/dotfiles
-  git submodule init
-  git submodule update
+    cd ~/dotfiles
+    git submodule init
+    git submodule update
