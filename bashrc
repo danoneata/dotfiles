@@ -63,6 +63,9 @@ bind '"\C-n":history-search-forward'
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+stty werase undef
+bind '"\C-w":unix-filename-rubout'
+
 # Aliases
 alias h='history | less'
 alias l='/bin/ls -FC --color -v'
@@ -147,5 +150,4 @@ function parse_git_branch ()
 eval `dircolors ~/.dircolors/dircolors.ansi-light`
 
 # Define prompt
-PS1="[\h][\w]"
-# export PS1="---------------------------------------------------------------------\n[\h][\w]\$(parse_git_branch)\n.....................................................................\n[\!]$ "
+PS1="[\e[34m\h\e[0m][\w]\$(parse_git_branch)\n\$ "
