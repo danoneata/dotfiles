@@ -1,11 +1,14 @@
 #!/bin/bash
 
 cd "$(dirname "$0")"
-# git pull
+# cd
+# git clone https://github.com/danoneata/dotfiles
 
 function do_it() {
     for file in "`ls`"
     do
+        # TODO ln -f doesn't force overwriting the existing file. 
+        # Find another way: move existing files to a backup folder and then create links.
         # ln -sf $file ~/.$file
     done
 }
