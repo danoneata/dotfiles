@@ -64,7 +64,8 @@ bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
 stty werase undef
-bind '"\C-w":unix-filename-rubout'
+bind '"\C-w":backward-kill-word'  # Deletes until any non-alphanumeric character.
+# bind '"\C-w":unix-filename-rubout'  # Deletes until slash.
 
 # Aliases
 alias h='history | less'
