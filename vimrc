@@ -18,6 +18,10 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Use pathogen for better plugin synchronization.
+" Each plug-in will lie inside its own folder.
+call pathogen#infect()
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -43,7 +47,7 @@ set mouse=a
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
+  " syntax on
   set hlsearch
 endif
 
@@ -128,9 +132,18 @@ nmap <silent> <S-tab> : b#<CR>
 " delete le buffer courant et passe au buffer precedent
 nmap <silent> <C-tab> :bd<CR>
 
-"Specify that a dark terminal background is being used.
-set bg=dark
-colorscheme desert
+" Specify that a dark terminal background is being used.
+" syntax enable
+let g:solarized_termcolors=&t_Co
+let g:solarized_termtrans=1
+if has('gui_running')
+  set background=dark
+else
+  set background=light
+endif
+" colorscheme desert
+colorscheme solarized
+
 
 " higlight cursor line
 set cursorline
